@@ -11,9 +11,11 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -134,6 +136,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+
+STATICFILES_DIRS = [
+    os.path.join(PROJECT_ROOT, 'static'),
+]
 
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
@@ -152,3 +159,4 @@ SOCIAL_AUTH_FACEBOOK_SECRET = 'f544a175f7b64fe1aedb0fb0fb5c6d9b'
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY ='554071266192-68mdk2t3rl70qu9b9vps8uk80rmojolc.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'JiUibU7f2WTh6KOziq_oBXTS'
 
+django_heroku.settings(locals())

@@ -1,5 +1,5 @@
 {
-    "name": "panda-vibhu",
+    "name": "Basic",
     "description": "A panda-vibhu",
     "image": "heroku/python",
     "keywords": ["python", "django" ],

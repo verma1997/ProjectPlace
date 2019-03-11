@@ -1,1 +1,1 @@
-web: gunicorn ProjectPlace.wsgi
+web: gunicorn Basic.wsgi
